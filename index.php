@@ -18,6 +18,23 @@ $resaultNo = "";
 $errors = array();                  //для переменной errors -  создаем пустой массив
 
 
+
+// Удаление фильма
+
+if ($_GET) {                                // Если есть $_GET запрос, тогда проверяем. Если $_GET['action'] == 'delete') тогда удаляем фильм
+    if ($_GET['action'] == 'deleted') {
+    $query = "DELETE FROM `films` WHERE id= ' ". mysqli_real_escape_string($link, $_GET['id'] ) ."' LIMIT 1 ";  // DELETE FROM `films` WHERE id= удалить из таблицы где ID = $_GET[id]
+    
+    mysqli_query($link,$query);
+
+    if (mysqli_affected_rows($link) > 0) { // возвращает последний элемент (DELETED)
+        $info = "Фильм  удален!";
+    }      
+
+    }
+}
+
+
 // Проверяем форму по  name="newFilm"
 if (array_key_exists('newFilm', $_POST) ) {                                                         // если форма  была отправлена, тогда добавляем данные
 
@@ -70,8 +87,6 @@ if (mysqli_query($link,$query)) {                   // запрос получа
 }
 
 
-//print_r($filmoteka)
-
 
 ?>
 
@@ -105,13 +120,22 @@ if (mysqli_query($link,$query)) {                   // запрос получа
         <div class="info"><?=$resaultNo?></div>
     <?php }?>
 
+    <?php if (@$info != '') {?>
+        <div class="notify notify--error"><?=$info?></div>
+    <?php }?>
 
         <div class="title-1">Фильмотека</div>
     <?php
         foreach ($films as $key => $value) {
         ?>
         <div class="card mb-20">
+            <div class="card__top">
             <h4 class="title-4"><?=@$films[$key]['title']?></h4>
+             <div>
+                <a href="index.php?action=deleted&id=<?=$films[$key]['id']?>" class="button button--removesmall">Удалить</a>
+                <a href="edit.php?action=edit&id=<?=$films[$key]['id']?>" class="button button--editsmall">Редактировать</a>
+            </div>
+            </div>
             <div class="badge"><?=@$films[$key]['genre']?></div>
             <div class="badge"><?=@$films[$key]['years']?></div>
         </div>
