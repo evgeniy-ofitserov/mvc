@@ -72,3 +72,18 @@ function films_update($link,$title,$genre,$years, $id){
     }
     return $result;
 }
+
+
+function films_delete($link,$id)
+{
+    $query = "DELETE FROM `films` WHERE id= ' ". mysqli_real_escape_string($link, $id ) ."' LIMIT 1 ";  // DELETE FROM `films` WHERE id= удалить из таблицы где ID = $_GET[id]
+    mysqli_query($link,$query);
+
+    if (mysqli_affected_rows($link) > 0) { // возвращает последний элемент (DELETED)
+        $info = "Фильм  удален!";
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+}
