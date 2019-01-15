@@ -43,6 +43,7 @@ $film = get_film($link, $_GET ['id']);
 
 
 include ('views/head.tpl');
+include ('views/notification.tpl');
 include ('views/edit-film.tpl');
 include ('views/footer.tpl');
 

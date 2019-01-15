@@ -44,6 +44,7 @@ if (array_key_exists('newFilm', $_POST) ) {
 }
 
 include ('views/head.tpl');
+include ('views/notification.tpl');
 include ('views/new-film.tpl');
 include ('views/footer.tpl');
 

@@ -9,6 +9,8 @@
             <div>
                 <a href="index.php?action=deleted&id=<?=$films[$key]['id']?>" class="button button--removesmall">Удалить</a>
                 <a href="edit.php?action=edit&id=<?=$films[$key]['id']?>" class="button button--editsmall">Редактировать</a>
+                <a href="single.php?&id=<?=$films[$key]['id']?>" class="button button--moresmall">Подробнее</a>
+
             </div>
         </div>
         <div class="badge"><?=@$films[$key]['genre']?></div>
