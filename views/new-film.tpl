@@ -23,7 +23,9 @@
             <div class="col">
                 <div class="form-group"><label class="label">Год<input class="input" name="years" type="text" placeholder="2000" /></label></div>
             </div>
-        </div><input class="button" type="submit" name="newFilm" value="Добавить" />
+        </div>
+        <textarea name="description" class="textarea mb-20" placeholder="Введите описание"></textarea>
+        <input class="button" type="submit" name="newFilm" value="Добавить" />
     </form>
 </div>
 </div><!-- build:jsLibs js/libs.js -->

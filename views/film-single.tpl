@@ -12,4 +12,6 @@
         </div>
         <div class="badge"><?=$film['genre']?></div>
         <div class="badge"><?=$film['years']?></div>
+        <div class="mt-20" ><?=$film['description']?></div>
+
     </div>

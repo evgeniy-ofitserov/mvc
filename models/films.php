@@ -21,15 +21,16 @@ function films_all($link){
 }
 
 
-function films_new($link,$title,$genre,$years){
+function films_new($link,$title,$genre,$years, $description){
 
 
     // Запись данных в БД
 
-    $query = "INSERT INTO `films` (`title`, `genre`, `years`) VALUES (
+    $query = "INSERT INTO `films` (`title`, `genre`, `years`, `description`) VALUES (
 		'".mysqli_real_escape_string($link,$title)."',  
 		'".mysqli_real_escape_string($link,$genre )."',  
-		'".mysqli_real_escape_string($link,$years )."'  
+		'".mysqli_real_escape_string($link,$years )."' ,
+        '".mysqli_real_escape_string($link,$description )."'  
 		)";
 
         $resault = '';
