@@ -3,8 +3,9 @@
 <h1 class="title-1">Добавить новый фильм</h1>
 
 <div class="panel-holder mt-20 mb-40">
-    <div class="title-3 mt-0"></div>
-    <form action="new.php" method="post">
+
+
+    <form action="new.php" method="post" enctype="multipart/form-data" >
 
         <?php
 
@@ -25,6 +26,9 @@
             </div>
         </div>
         <textarea name="description" class="textarea mb-20" placeholder="Введите описание"></textarea>
+        <div class="mb-20">
+                <input type="file" name="photo">
+        </div>
         <input class="button" type="submit" name="newFilm" value="Добавить" />
     </form>
 </div>

@@ -27,7 +27,7 @@ if (array_key_exists('update-film',$_POST)) {                    // если ф�
         $result = '';
 
 
-        $result =  films_update($link, $_POST['title'], $_POST['genre'], $_POST['years'], $_GET['id']);
+        $result =  films_update($link, $_POST['title'], $_POST['genre'], $_POST['years'], $_GET['id'],$_POST['description']);
 
         if ($result){
             $resaultOK = "Фильм добавлен";

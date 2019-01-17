@@ -3,7 +3,7 @@
 
 <div class="panel-holder mt-20 mb-40">
     <div class="title-3 mt-0"></div>
-    <form action="edit.php?id=<?=$film['id']?>" method="post">
+    <form enctype="multipart/form-data" action="edit.php?id=<?=$film['id']?>" method="post">
 
         <?php
 
@@ -22,7 +22,17 @@
             <div class="col">
                 <div class="form-group"><label class="label">Год<input class="input" name="years" type="text" placeholder="2000" value="<?=$film['years']?>"/></label></div>
             </div>
-        </div><input class="button" type="submit" name="update-film" value="Обновить" />
+        </div>
+        <textarea name="description" class="textarea mb-20" placeholder="Введите описание">
+            <?=$film['description']?>
+        </textarea>
+        <div class="mb-20">
+                <input type="file" name="photo">
+        </div>
+
+
+        <input class="button" type="submit" name="update-film" value="Обновить" />
+
     </form>
 </div>
 </div><!-- build:jsLibs js/libs.js -->

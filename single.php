@@ -30,8 +30,6 @@ if (!$_GET) {                                // Если есть $_GET запр
 $film = get_film($link, $_GET['id']);
 
 
-
-
 // echo "<pre>";
 // print_r($film);
 // echo "</pre>";
