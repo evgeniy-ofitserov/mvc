@@ -139,8 +139,7 @@ if ( isset($_FILES['photo']['name']) && $_FILES['photo']['tmp_name'] != ""  ) {
     $query="UPDATE films 
             SET title='".mysqli_real_escape_string($link,$title)."',
                 genre='".mysqli_real_escape_string($link,$genre)."',
-                years='".mysqli_real_escape_string($link,$years)."',
-                description='".mysqli_real_escape_string($link,$description)."',
+                years='".mysqli_real_escape_string($link,$years)."',description='".mysqli_real_escape_string($link,$description)."',
                 photo='".mysqli_real_escape_string($link,$db_file_name)."'
 
             WHERE id=".mysqli_real_escape_string($link, $id)." LIMIT 1";

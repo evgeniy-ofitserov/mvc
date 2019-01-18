@@ -23,9 +23,7 @@
                 <div class="form-group"><label class="label">Год<input class="input" name="years" type="text" placeholder="2000" value="<?=$film['years']?>"/></label></div>
             </div>
         </div>
-        <textarea name="description" class="textarea mb-20" placeholder="Введите описание">
-            <?=$film['description']?>
-        </textarea>
+        <textarea name="description" class="textarea mb-20" placeholder="Введите описание"><?=$film['description']?></textarea>
         <div class="mb-20">
                 <input type="file" name="photo">
         </div>
