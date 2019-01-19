@@ -28,7 +28,7 @@ if (array_key_exists('newFilm', $_POST) ) {
         $result = '';
 
 
-      $result =  films_new($link, $_POST['title'], $_POST['genre'], $_POST['years']);
+      $result =  films_new($link, $_POST['title'], $_POST['genre'], $_POST['years'], $_POST['description']);
 
         if ($result){
             $resaultOK = "Фильм добавлен";
@@ -44,6 +44,7 @@ if (array_key_exists('newFilm', $_POST) ) {
 }
 
 include ('views/head.tpl');
+include ('views/notification.tpl');
 include ('views/new-film.tpl');
 include ('views/footer.tpl');
 

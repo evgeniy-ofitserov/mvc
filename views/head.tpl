@@ -1,4 +1,7 @@
 <!-- Разные миксины по одному, которые понадобятся. Для логотипа, бейджа, и т.д.-->
+
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -23,5 +26,22 @@
         <div class="admin-nav">
             <a href="index.php" class="admin-nav__link">Все фильмы</a>
             <a href="new.php"  class="admin-nav__link">Добавить новый фильм</a>
+            <a href="request.php"  class="admin-nav__link">Указать информацию</a>
+
         </div>
     </div>
+
+    <?php if ( isset($_COOKIE['user-name']) ) { ?>
+
+    <div class="mb-50">
+     <?php if ( isset($_COOKIE['user-city']) ) { ?>
+
+        Привет, <?=$_COOKIE['user-name']?> из <?=$_COOKIE['user-city']?>!
+
+    <?php }else { ?>
+
+        Привет, <?=$_COOKIE['user-name']?>!
+        <?php } ?>
+
+    </div>
+<?php } ?>

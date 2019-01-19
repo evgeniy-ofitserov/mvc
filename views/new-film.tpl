@@ -1,26 +1,11 @@
-<?php
-$resaultOK = '';
-$resaultNo = '';
-?>
-
-
-<?php if ($resaultOK != '') {?>
-<div class="info"><?=$resaultOK?></div>
-<?php }?>
-<?php if ($resaultNo != '') {?>
-<div class="info"><?=$resaultNo?></div>
-<?php }?>
-
-<?php if (@$info != '') {?>
-<div class="notify notify--error"><?=$info?></div>
-<?php }?>
 
 
 <h1 class="title-1">Добавить новый фильм</h1>
 
 <div class="panel-holder mt-20 mb-40">
-    <div class="title-3 mt-0"></div>
-    <form action="new.php" method="post">
+
+
+    <form action="new.php" method="post" enctype="multipart/form-data" >
 
         <?php
 
@@ -39,7 +24,12 @@ $resaultNo = '';
             <div class="col">
                 <div class="form-group"><label class="label">Год<input class="input" name="years" type="text" placeholder="2000" /></label></div>
             </div>
-        </div><input class="button" type="submit" name="newFilm" value="Добавить" />
+        </div>
+        <textarea name="description" class="textarea mb-20" placeholder="Введите описание"></textarea>
+        <div class="mb-20">
+                <input type="file" name="photo">
+        </div>
+        <input class="button" type="submit" name="newFilm" value="Добавить" />
     </form>
 </div>
 </div><!-- build:jsLibs js/libs.js -->

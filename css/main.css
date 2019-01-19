@@ -418,6 +418,17 @@ a.badge:active {
   height: 2.25em;
   padding-top: 0.4em;
 }
+
+.button--moresmall {
+  padding-bottom: 0.8em;
+  padding-top: 0.45em;
+  font-size: 14px;
+  border-color: #5d19b5;
+  color: #5d19b5;
+  background-color: #ffffff;
+  height: 2.25em;
+  padding-top: 0.4em;
+}
 .button--removesmall:hover,
 .button--removesmall:focus {
   border-color: #e70c0c;
