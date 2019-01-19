@@ -66,3 +66,21 @@
 
     </div>
 <?php } ?>
+
+<?php 
+if( isset($_SESSION['user']) ){
+    if($_SESSION['user'] == 'admin')  {    
+?>
+<div class="mb-50">
+        <?php if ( isset($_COOKIE['userLogin']) ) { ?>
+   
+           Привет, <?=$_COOKIE['userLogin']?>!
+   
+       <?php } ?>
+     </div>
+
+<?php 
+     }
+
+}
+?>

@@ -21,8 +21,11 @@ if ( isset($_POST['enter'] )) {
 
             $_SESSION['user'] = 'admin';
 
+            setcookie('userLogin', 'Администратор', time() + 60*60*24 );
+
             header('Location: ' . HOST .'index.php');
         }
+
 
     }
 
