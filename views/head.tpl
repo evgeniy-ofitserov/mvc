@@ -25,9 +25,29 @@
     <div class="header-admin mb-30">
         <div class="admin-nav">
             <a href="index.php" class="admin-nav__link">Все фильмы</a>
-            <a href="new.php"  class="admin-nav__link">Добавить новый фильм</a>
-            <a href="request.php"  class="admin-nav__link">Указать информацию</a>
 
+    <?php 
+        if( isset($_SESSION['user']) ){
+            if($_SESSION['user'] == 'admin')  {    
+     ?>
+                <a href="new.php"  class="admin-nav__link">Добавить новый фильм</a>     
+    <?php 
+             }
+
+        }
+     ?>        
+        
+     <?php if( !isAdmin() ) { ?>
+            <a href="login.php"  class="admin-nav__link">Вход для админа</a>
+            <a href="request.php"  class="admin-nav__link">Указать информацию</a>
+    <?php }?>
+          
+
+
+            <?php if( isAdmin() ) { ?>
+            <a href="logout.php"  class="admin-nav__link">Выход</a> 
+            <?php }?>
+      
         </div>
     </div>
 

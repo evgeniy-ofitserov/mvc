@@ -4,7 +4,10 @@ require ('config.php');
 require ('database.php');
 $link = db_connect();
 
+
+
 require ('models/films.php');
+require ('functions\login_functions.php');
 
 if (array_key_exists('update-film',$_POST)) {                    // если форма  была отправлена, тогда обновляем данные
 
@@ -25,7 +28,6 @@ if (array_key_exists('update-film',$_POST)) {                    // если ф�
     if (empty($errors)) {
 
         $result = '';
-
 
         $result =  films_update($link, $_POST['title'], $_POST['genre'], $_POST['years'], $_GET['id'],$_POST['description']);
 

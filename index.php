@@ -1,11 +1,12 @@
-
-
 <?php
 
 // Подключаемся к БД
 require ('config.php');
 require ('database.php');
 require ('models/films.php');
+
+require ('functions\login_functions.php');
+
 
 $link = db_connect();
 

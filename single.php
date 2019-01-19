@@ -1,5 +1,3 @@
-
-
 <?php
 
 // Подключаемся к БД
@@ -8,6 +6,8 @@ require ('database.php');
 require ('models/films.php');
 
 $link = db_connect();
+
+require ('functions\login_functions.php');
 
 
 
