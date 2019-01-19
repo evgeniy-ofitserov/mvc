@@ -63,6 +63,20 @@ function get_film($link, $id){
     return $film;
 }
 
+
+function check_admin($link, $username, $password){
+    
+    $query="SELECT * FROM  `admin`  WHERE username = '".mysqli_real_escape_string($link, $username) ."'
+    AND password = '".mysqli_real_escape_string($link, $password) ."'LIMIT 1";
+
+
+    if ($result=mysqli_query($link,$query)) {
+        $user=mysqli_fetch_array($result);
+    }
+    return $user;
+}
+
+
 function films_update($link,$title,$genre,$years, $id, $description){
 
     $db_file_name = '';
