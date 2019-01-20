@@ -14,10 +14,22 @@
                     <div class="card__top">
                             <h4 class="title-4"><?=@$films[$key]['title']?></h4>
                             <div>
-                                <a href="index.php?action=deleted&id=<?=$films[$key]['id']?>" class="button button--removesmall">Удалить</a>
-                                <a href="edit.php?action=edit&id=<?=$films[$key]['id']?>" class="button button--editsmall">Редактировать</a>
+                                    <?php 
+                                    if( isset($_SESSION['user']) ){
+                                        if($_SESSION['user'] == 'admin')  {    
+                                ?>
+                                        <a href="edit.php?action=edit&id=<?=$films[$key]['id']?>" class="button button--editsmall">Редактировать</a>
+                                        <a href="index.php?action=deleted&id=<?=$films[$key]['id']?>" class="button button--removesmall">Удалить</a>
+        
+                        <?php 
+                                        }
+        
+                                    }
+                                ?> 
                                 <a href="single.php?&id=<?=$films[$key]['id']?>" class="button button--moresmall">Подробнее</a>
                             </div>
+                
+        
                         </div>
                         <div class="badge"><?=@$films[$key]['genre']?></div>
                         <div class="badge"><?=@$films[$key]['years']?></div>
